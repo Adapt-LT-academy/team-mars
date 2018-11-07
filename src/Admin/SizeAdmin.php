@@ -13,6 +13,7 @@ class SizeAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('name', TextType::class);
+        $formMapper->add('size', TextType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
