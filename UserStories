@@ -1,0 +1,15 @@
+IDEA: Chatbot that shows shoes that meets the properties the user provided and allows the user to save and buy shoes he liked.
+
+#1: As a user I want to provide information about shoe properties like size, colour, type, brand, etc.
+
+#2: As a user I want to see pictures of shoes that meets the properties I provided.
+
+#3: As a user I want to save shoes I like and skip the ones I don't like.
+
+#4: As a user I want to see shoes I liked. 
+
+#5: As a user I want to order shoes I liked.
+
+#6: As an admin I want to enter information about shoes into the database.
+
+#7: As an admin I want to see submitted orders.
