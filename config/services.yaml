@@ -36,3 +36,7 @@ services:
         tags:
         - { name: sonata.admin, manager_type: orm, label: Size }
         public: true
+
+    App\Service\OptionsService:
+        class: App\Service\OptionsService
+        public: true
