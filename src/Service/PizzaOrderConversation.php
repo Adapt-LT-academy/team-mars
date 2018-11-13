@@ -34,7 +34,7 @@ class PizzaOrderConversation extends Conversation
     public function askSize()
     {
         $question = Question::create('What Pizza size do you want?');
-        
+
         $question->addButtons(
             [
                 Button::create('Huge')->value('Huge'),
