@@ -34,7 +34,7 @@ class PizzaOrderConversation extends Conversation
     public function askSize()
     {
         $question = Question::create('What Pizza size do you want?');
-
+        $this->say('<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">');
         $question->addButtons(
             [
                 Button::create('Huge')->value('Huge'),
