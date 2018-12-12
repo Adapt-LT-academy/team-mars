@@ -12,10 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Admin
 {
+
     /**
      * @var string
      *
-     * @ORM\Column(name="Email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="Email", type="string", length=180, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +25,7 @@ class Admin
     /**
      * @var string|null
      *
-     * @ORM\Column(name="Password", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Password", type="string", length=180, nullable=true)
      */
     private $password;
 

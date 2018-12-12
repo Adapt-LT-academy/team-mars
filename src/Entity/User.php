@@ -17,7 +17,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="SessionID", type="string", length=255, nullable=false)
+     * @ORM\Column(name="SessionID", type="string", length=180, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -26,7 +26,7 @@ class User
     /**
      * @var string|null
      *
-     * @ORM\Column(name="Email", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Email", type="string", length=180, nullable=true)
      */
     private $email;
 
