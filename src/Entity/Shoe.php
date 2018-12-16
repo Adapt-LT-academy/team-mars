@@ -2,149 +2,145 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Shoe
- *
- * @ORM\Table(name="Shoe")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\ShoeRepository")
  */
 class Shoe
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="ID", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="Brand", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=180)
      */
-    private $brand;
+    private $Name;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="Name", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=180)
      */
-    private $name;
+    private $Type;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="ShopURL", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=180)
      */
-    private $shopurl;
+    private $Color;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="ImageURL", type="string", length=255, nullable=true)
+     * @ORM\Column(type="float")
      */
-    private $imageurl;
+    private $Price;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="shoeid")
+     * @ORM\Column(type="string", length=180)
      */
-    private $userid;
+    private $Image;
 
     /**
-     * Constructor
+     * @return int|null
      */
-    public function __construct()
-    {
-        $this->userid = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getBrand(): ?string
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(?string $brand): self
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
-        return $this->name;
+        return $this->Name;
     }
 
-    public function setName(?string $name): self
+    /**
+     * @param string $Name
+     * @return Shoe
+     */
+    public function setName(string $Name): self
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getShopurl(): ?string
-    {
-        return $this->shopurl;
-    }
-
-    public function setShopurl(?string $shopurl): self
-    {
-        $this->shopurl = $shopurl;
-
-        return $this;
-    }
-
-    public function getImageurl(): ?string
-    {
-        return $this->imageurl;
-    }
-
-    public function setImageurl(?string $imageurl): self
-    {
-        $this->imageurl = $imageurl;
+        $this->Name = $Name;
 
         return $this;
     }
 
     /**
-     * @return Collection|User[]
+     * @return string|null
      */
-    public function getUserid(): Collection
+    public function getType(): ?string
     {
-        return $this->userid;
+        return $this->Type;
     }
 
-    public function addUserid(User $userid): self
+    /**
+     * @param string $Type
+     * @return Shoe
+     */
+    public function setType(string $Type): self
     {
-        if (!$this->userid->contains($userid)) {
-            $this->userid[] = $userid;
-            $userid->addShoeid($this);
-        }
+        $this->Type = $Type;
 
         return $this;
     }
 
-    public function removeUserid(User $userid): self
+    /**
+     * @return string|null
+     */
+    public function getColor(): ?string
     {
-        if ($this->userid->contains($userid)) {
-            $this->userid->removeElement($userid);
-            $userid->removeShoeid($this);
-        }
+        return $this->Color;
+    }
+
+    /**
+     * @param string $Color
+     * @return Shoe
+     */
+    public function setColor(string $Color): self
+    {
+        $this->Color = $Color;
 
         return $this;
     }
 
+    /**
+     * @return float|null
+     */
+    public function getPrice(): ?float
+    {
+        return $this->Price;
+    }
+
+    /**
+     * @param float $Price
+     * @return Shoe
+     */
+    public function setPrice(float $Price): self
+    {
+        $this->Price = $Price;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImage(): ?string
+    {
+        return $this->Image;
+    }
+
+    /**
+     * @param string $Image
+     * @return Shoe
+     */
+    public function setImage(string $Image): self
+    {
+        $this->Image = $Image;
+
+        return $this;
+    }
 }
