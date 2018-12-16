@@ -9,7 +9,7 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 use App\Service\OptionsService;
 
 /**
- * Class PizzaOrderConversation
+ * Class ShoeOrderConversation
  */
 class PizzaOrderConversation extends Conversation
 {

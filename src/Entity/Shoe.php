@@ -63,7 +63,7 @@ class Shoe
      */
     public function setName(string $Name): self
     {
-        $this->Name = $Name;
+        $this->Name = $this->getDoctrine()->getRepository(shoe::class)->findItemByName();
 
         return $this;
     }
@@ -82,7 +82,7 @@ class Shoe
      */
     public function setType(string $Type): self
     {
-        $this->Type = $Type;
+        $this->Type = $this->getDoctrine()->getRepository(shoe::class)->findItemByType();
 
         return $this;
     }
@@ -101,7 +101,7 @@ class Shoe
      */
     public function setColor(string $Color): self
     {
-        $this->Color = $Color;
+        $this->Color = $this->getDoctrine()->getRepository(shoe::class)->findItemByColor();
 
         return $this;
     }
@@ -120,7 +120,7 @@ class Shoe
      */
     public function setPrice(float $Price): self
     {
-        $this->Price = $Price;
+        $this->Price =this->getDoctrine()->getRepository(shoe::class)->findItemByPrice();
 
         return $this;
     }
@@ -139,7 +139,7 @@ class Shoe
      */
     public function setImage(string $Image): self
     {
-        $this->Image = $Image;
+        $this->Image = $this->getDoctrine()->getRepository(shoe::class)->findItemByImage();
 
         return $this;
     }

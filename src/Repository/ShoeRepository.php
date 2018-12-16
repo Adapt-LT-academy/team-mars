@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Shoe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -22,29 +23,41 @@ class ShoeRepository extends ServiceEntityRepository
 //    /**
 //     * @return Shoe[] Returns an array of Shoe objects
 //     */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Shoe
+    public function FindItemByName()
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $this->getEntityManager()->createQuery(
+            'SELECT name FROM shoe ORDER BY name ASC'
+        )
+        ->getResult();
     }
-    */
+
+    public function FindItemByType()
+    {
+        return $this->getEntityManager()->createQuery(
+            'SELECT type FROM shoe ORDER BY type ASC'
+        )
+            ->getResult();
+    }
+    public function FindItemByColor()
+    {
+        return $this->getEntityManager()->createQuery(
+            'SELECT color FROM shoe ORDER BY color ASC'
+        )
+            ->getResult();
+    }
+    public function FindItemByPrice()
+    {
+        return $this->getEntityManager()->createQuery(
+            'SELECT price FROM shoe ORDER BY price ASC'
+        )
+            ->getResult();
+    }
+    public function FindItemByImage()
+    {
+        return $this->getEntityManager()->createQuery(
+            'SELECT image FROM shoe ORDER BY image ASC'
+        )
+            ->getResult();
+    }
 }
